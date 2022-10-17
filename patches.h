@@ -14,7 +14,7 @@
  * when including this patch.
  * https://st.suckless.org/patches/alpha/
  */
-#define ALPHA_PATCH 0
+#define ALPHA_PATCH 1
 
 /* The alpha focus highlight patch allows the user to specify two distinct opacity values or
  * background colors in order to easily differentiate between focused and unfocused terminal
@@ -37,7 +37,7 @@
 /* A simple variant of the anysize patch that only changes the resize hints to allow the window to
  * be resized to any size.
  */
-#define ANYSIZE_SIMPLE_PATCH 0
+#define ANYSIZE_SIMPLE_PATCH 1
 
 /* Draws a background image in farbfeld format in place of the defaultbg color allowing for pseudo
  * transparency.
@@ -57,7 +57,7 @@
  *    https://invisible-island.net/xterm/ctlseqs/ctlseqs.html#h4-Functions-using-CSI-_-ordered-by-the-final-character-lparen-s-rparen:CSI-Ps-SP-q.1D81
  * https://st.suckless.org/patches/blinking_cursor/
  */
-#define BLINKING_CURSOR_PATCH 0
+#define BLINKING_CURSOR_PATCH 1
 
 /* By default bold text is rendered with a bold font in the bright variant of the current color.
  * This patch makes bold text rendered simply as bold, leaving the color unaffected.
@@ -83,7 +83,7 @@
  *
  * https://github.com/bakkeby/st-flexipatch/issues/34
  */
-#define COLUMNS_PATCH 0
+#define COLUMNS_PATCH 1
 
 /* Select and copy the last URL displayed with Mod+l. Multiple invocations cycle through the
  * available URLs.
@@ -116,7 +116,7 @@
  * While many terminal emulators do this it is not adhering to specification. xterm is an
  * example terminal that sets a blinking block instead of the configured one, same as st.
  */
-#define DEFAULT_CURSOR_PATCH 0
+#define DEFAULT_CURSOR_PATCH 1
 
 /* Return BS on pressing backspace and DEL on pressing the delete key.
  * https://st.suckless.org/patches/delkey/
@@ -141,7 +141,7 @@
 /* This patch makes the cursor color the inverse of the current cell color.
  * https://st.suckless.org/patches/dynamic-cursor-color/
  */
-#define DYNAMIC_CURSOR_COLOR_PATCH 0
+#define DYNAMIC_CURSOR_COLOR_PATCH 1
 
 /* Reading and writing st's screen through a pipe, e.g. pass info to dmenu.
  * https://st.suckless.org/patches/externalpipe/
@@ -170,7 +170,7 @@
  * that are available to GUI applications.
  * https://st.suckless.org/patches/fix_keyboard_input/
  */
-#define FIXKEYBOARDINPUT_PATCH 0
+#define FIXKEYBOARDINPUT_PATCH 1
 
 /* This patch allows you to add spare font besides the default. Some glyphs can be not present in
  * the default font. For this glyphs st uses font-config and try to find them in font cache first.
@@ -184,7 +184,7 @@
  * the terminal window.
  * https://st.suckless.org/patches/hidecursor/
  */
-#define HIDECURSOR_PATCH 0
+#define HIDECURSOR_PATCH 1
 
 /* This patch hides the terminal cursor when the window loses focus (as opposed to showing a hollow
  * cursor).
@@ -208,7 +208,7 @@
 /* This patch allows you to select text on the terminal using keyboard shortcuts.
  * https://st.suckless.org/patches/keyboard_select/
  */
-#define KEYBOARDSELECT_PATCH 0
+#define KEYBOARDSELECT_PATCH 1
 
 /* This patch adds support for drawing ligatures using the Harfbuzz library to transform
  * original text of a single line to a list of glyphs with ligatures included.
@@ -272,7 +272,7 @@
 /* Scroll back through terminal output using Shift+{PageUp, PageDown}.
  * https://st.suckless.org/patches/scrollback/
  */
-#define SCROLLBACK_PATCH 0
+#define SCROLLBACK_PATCH 1
 
 /* Scroll back through terminal output using Shift+MouseWheel.
  * This variant depends on SCROLLBACK_PATCH being enabled.
@@ -284,7 +284,7 @@
  * This variant depends on SCROLLBACK_PATCH being enabled.
  * https://st.suckless.org/patches/scrollback/
  */
-#define SCROLLBACK_MOUSE_ALTSCREEN_PATCH 0
+#define SCROLLBACK_MOUSE_ALTSCREEN_PATCH 1
 
 /* This is the single drawable buffer patch as outlined in the FAQ to get images
  * in w3m to display. While this patch does not break the alpha patch it images
@@ -405,7 +405,7 @@
 /* Briefly inverts window content on terminal bell event.
  * https://st.suckless.org/patches/visualbell/
  */
-#define VISUALBELL_1_PATCH 0
+#define VISUALBELL_1_PATCH 1
 
 /* Adds support for w3m images.
  * https://st.suckless.org/patches/w3m/
@@ -432,7 +432,7 @@
 /* This patch allows user to specify the initial path st should use as the working directory.
  * https://st.suckless.org/patches/workingdir/
  */
-#define WORKINGDIR_PATCH 0
+#define WORKINGDIR_PATCH 1
 
 /* This patch adds the ability to configure st via Xresources. At startup, st will read and
  * apply the resources named in the resources[] array in config.h.
