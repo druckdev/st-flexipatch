@@ -388,9 +388,9 @@ static Shortcut shortcuts[] = {
 	{ ControlMask,          XK_Print,       toggleprinter,   {.i =  0} },
 	{ ShiftMask,            XK_Print,       printscreen,     {.i =  0} },
 	{ XK_ANY_MOD,           XK_Print,       printsel,        {.i =  0} },
-	{ TERMMOD,              XK_Prior,       zoom,            {.f = +1} },
-	{ TERMMOD,              XK_Next,        zoom,            {.f = -1} },
-	{ TERMMOD,              XK_Home,        zoomreset,       {.f =  0} },
+	{ MODKEY | ShiftMask,   XK_plus,        zoom,            {.f = +1} },
+	{ MODKEY,               XK_minus,       zoom,            {.f = -1} },
+	{ MODKEY,               XK_equal,       zoomreset,                 },
 	{ TERMMOD,              XK_C,           clipcopy,        {.i =  0} },
 	{ TERMMOD,              XK_V,           clippaste,       {.i =  0} },
 	#if ALPHA_PATCH
@@ -402,8 +402,14 @@ static Shortcut shortcuts[] = {
 	#endif // ALPHA_FOCUS_HIGHLIGHT_PATCH
 	#endif // ALPHA_PATCH
 	#if SCROLLBACK_PATCH
-	{ ShiftMask,            XK_Page_Up,     kscrollup,       {.i = -1}, S_PRI },
-	{ ShiftMask,            XK_Page_Down,   kscrolldown,     {.i = -1}, S_PRI },
+	{ MODKEY,               XK_Page_Up,     kscrollup,       {.i = -1} },
+	{ MODKEY,               XK_u,           kscrollup,       {.i = -1} },
+	{ MODKEY,               XK_k,           kscrollup,       {.i = +1} },
+	{ ShiftMask | MODKEY,   XK_K,           kscrollup,       {.i = +3} },
+	{ MODKEY,               XK_Page_Down,   kscrolldown,     {.i = -1} },
+	{ MODKEY,               XK_d,           kscrolldown,     {.i = -1} },
+	{ MODKEY,               XK_j,           kscrolldown,     {.i = +1} },
+	{ ShiftMask | MODKEY,   XK_J,           kscrolldown,     {.i = +3} },
 	#endif // SCROLLBACK_PATCH
 	#if CLIPBOARD_PATCH
 	{ TERMMOD,              XK_Y,           clippaste,       {.i =  0} },
@@ -429,7 +435,7 @@ static Shortcut shortcuts[] = {
 	#endif // EXTERNALPIPEIN_PATCH
 	#endif // EXTERNALPIPE_PATCH
 	#if KEYBOARDSELECT_PATCH
-	{ TERMMOD,              XK_Escape,      keyboard_select, { 0 } },
+	{ MODKEY,               XK_Escape,      keyboard_select, { 0 } },
 	#endif // KEYBOARDSELECT_PATCH
 	#if ISO14755_PATCH
 	{ TERMMOD,              XK_I,           iso14755,        {.i =  0} },
