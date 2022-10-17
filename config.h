@@ -107,7 +107,7 @@ static unsigned int blinktimeout = 500;
 /*
  * thickness of underline and bar cursors
  */
-static unsigned int cursorthickness = 2;
+static unsigned int cursorthickness = 3;
 
 #if BOXDRAW_PATCH
 /*
