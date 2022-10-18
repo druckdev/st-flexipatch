@@ -2963,11 +2963,7 @@ xsetcursor(int cursor)
 	#endif // BLINKING_CURSOR_PATCH
 		return 1;
 	#if DEFAULT_CURSOR_PATCH
-	#if BLINKING_CURSOR_PATCH
-	win.cursor = (cursor ? cursor : cursorstyle);
-	#else
 	win.cursor = (cursor ? cursor : cursorshape);
-	#endif // BLINKING_CURSOR_PATCH
 	#else
 	win.cursor = cursor;
 	#endif // DEFAULT_CURSOR_PATCH
@@ -3417,11 +3413,7 @@ main(int argc, char *argv[])
 {
 	xw.l = xw.t = 0;
 	xw.isfixed = False;
-	#if BLINKING_CURSOR_PATCH
-	xsetcursor(cursorstyle);
-	#else
 	xsetcursor(cursorshape);
-	#endif // BLINKING_CURSOR_PATCH
 
 	ARGBEGIN {
 	case 'a':
