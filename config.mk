@@ -19,13 +19,13 @@ XRENDER = -lXrender
 #XCURSOR = -lXcursor
 
 # Uncomment the lines below for the ligatures patch / LIGATURES_PATCH
-#LIGATURES_C = hb.c
-#LIGATURES_H = hb.h
+#LIGATURES_C = patch/hb.c
+#LIGATURES_H = patch/hb.h
 #LIGATURES_INC = `$(PKG_CONFIG) --cflags harfbuzz`
 #LIGATURES_LIBS = `$(PKG_CONFIG) --libs harfbuzz`
 
 # Uncomment this for the SIXEL patch / SIXEL_PATCH
-#SIXEL_C = sixel.c sixel_hls.c
+#SIXEL_C = patch/sixel.c patch/sixel_hls.c
 
 # includes and libs, uncomment harfbuzz for the ligatures patch
 INCS = -I$(X11INC) \
