@@ -53,11 +53,11 @@
 #define STR_ARG_SIZ   ESC_ARG_SIZ
 
 /* macros */
-#define IS_SET(flag)    ((term.mode & (flag)) != 0)
-#define ISCONTROLC0(c)  (BETWEEN(c, 0, 0x1f) || (c) == 0x7f)
-#define ISCONTROLC1(c)  (BETWEEN(c, 0x80, 0x9f))
-#define ISCONTROL(c)    (ISCONTROLC0(c) || ISCONTROLC1(c))
-#define ISDELIM(u)      (u && wcschr(worddelimiters, u))
+#define IS_SET(flag)		((term.mode & (flag)) != 0)
+#define ISCONTROLC0(c)		(BETWEEN(c, 0, 0x1f) || (c) == 0x7f)
+#define ISCONTROLC1(c)		(BETWEEN(c, 0x80, 0x9f))
+#define ISCONTROL(c)		(ISCONTROLC0(c) || ISCONTROLC1(c))
+#define ISDELIM(u)		(u && wcschr(worddelimiters, u))
 #if VIM_BROWSE_PATCH
 static inline int max(int a, int b) { return a > b ? a : b; }
 static inline int min(int a, int b) { return a < b ? a : b; }
@@ -1074,7 +1074,7 @@ ttynew(const char *line, char *cmd, const char *out, char **args)
 		if (ioctl(s, TIOCSCTTY, NULL) < 0)
 			die("ioctl TIOCSCTTY failed: %s\n", strerror(errno));
 		if (s > 2)
-				close(s);
+			close(s);
 #ifdef __OpenBSD__
 		if (pledge("stdio getpw proc exec", NULL) == -1)
 			die("pledge\n");
@@ -3090,11 +3090,10 @@ tputc(Rune u)
 
 	control = ISCONTROL(u);
 	#if SIXEL_PATCH
-	if (u < 127 || !IS_SET(MODE_UTF8 | MODE_SIXEL))
+	if (u < 127 || !IS_SET(MODE_UTF8 | MODE_SIXEL)) {
 	#else
-	if (u < 127 || !IS_SET(MODE_UTF8))
+	if (u < 127 || !IS_SET(MODE_UTF8)) {
 	#endif // SIXEL_PATCH
-	{
 		c[0] = u;
 		width = len = 1;
 	} else {
@@ -3268,11 +3267,10 @@ twrite(const char *buf, int buflen, int show_ctrl)
 
 	for (n = 0; n < buflen; n += charsize) {
 		#if SIXEL_PATCH
-		if (IS_SET(MODE_UTF8) && !IS_SET(MODE_SIXEL))
+		if (IS_SET(MODE_UTF8) && !IS_SET(MODE_SIXEL)) {
 		#else
-		if (IS_SET(MODE_UTF8))
+		if (IS_SET(MODE_UTF8)) {
 		#endif // SIXEL_PATCH
-		{
 			/* process a complete utf8 char */
 			charsize = utf8decode(buf + n, &u, buflen - n);
 			if (charsize == 0)
